@@ -5,6 +5,8 @@
       <img
         v-for="digi in digimon"
         v-bind:key="digi"
+        width="50"
+        height="50"
         :src="digi.img"
         :alt="digi.name"
       />
