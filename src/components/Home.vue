@@ -1,4 +1,5 @@
 <template>
+  <AppBar />
   <div class="homePage">
     <v-container class="digiView">
       <MainCard
@@ -14,11 +15,13 @@
 
 <script>
 import MainCard from "./Card.vue";
+import AppBar from "./AppBar.vue";
 
 export default {
   name: "HomePage",
   components: {
     MainCard,
+    AppBar,
   },
   data() {
     return {
