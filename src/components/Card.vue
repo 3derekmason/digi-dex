@@ -1,9 +1,9 @@
 <template>
-  <div class="digiCard">
-    <p>{{ this.name }}</p>
-    <img :src="this.img" width="80" />
-    <p>{{ this.level }}</p>
-  </div>
+  <v-card elevation="3" class="digiCard">
+    <v-card-title class="digiName">{{ this.name }}</v-card-title>
+    <img :src="this.img" class="digiPic" />
+    <v-card-text class="digiLevel">{{ this.level }}</v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -16,3 +16,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.digiCard {
+  box-sizing: border-box;
+  padding: 24px;
+}
+</style>
