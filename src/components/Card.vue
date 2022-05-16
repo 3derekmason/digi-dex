@@ -1,6 +1,6 @@
 <template>
   <div class="digiCard">
-    <p>Name</p>
+    <p>fuck</p>
     <img alt="digimon.img" />
   </div>
 </template>

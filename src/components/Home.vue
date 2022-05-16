@@ -2,18 +2,23 @@
   <v-container>
     <h1>Digi-Dex</h1>
     <div class="digiView">
-      <p v-for="digi in digimon" v-bind:key="digi">Digi</p>
+      <MainCard v-for="digi in digimon" v-bind:key="digi" v:bind="digiData" />
     </div>
   </v-container>
 </template>
 
 <script>
+import MainCard from "./Card.vue";
+
 export default {
   name: "HomePage",
-  props: {
+  digiData: {
     name: String,
     img: String,
-    type: String,
+    level: String,
+  },
+  components: {
+    MainCard,
   },
   data() {
     return {
@@ -22,6 +27,7 @@ export default {
   },
   mounted() {
     this.getAllDigis();
+    console.log(this.digimon);
   },
   methods: {
     async getAllDigis() {
