@@ -1,6 +1,7 @@
 <template>
   <AppBar />
   <div class="homePage">
+    <MainToolbar />
     <v-container class="digiView">
       <MainCard
         v-for="digi in digimon"
@@ -18,6 +19,7 @@
 import MainCard from "./Card.vue";
 import AppBar from "./AppBar.vue";
 import AppFoot from "./Footer.vue";
+import MainToolbar from "./Toolbar.vue";
 
 export default {
   name: "HomePage",
@@ -25,6 +27,7 @@ export default {
     MainCard,
     AppBar,
     AppFoot,
+    MainToolbar,
   },
   data() {
     return {
@@ -51,13 +54,20 @@ export default {
 <style scoped>
 .homePage {
   width: 100vw;
+  height: calc(100vh - 117px);
   background: #454655;
+  overflow-y: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 8px;
   overflow-y: scroll;
 }
 
 .digiView {
   width: 90vw;
-  height: calc(100vh - 117px);
+  height: calc(100vh - 181px);
   border-radius: 2px;
   display: flex;
   flex-wrap: wrap;
