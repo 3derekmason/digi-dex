@@ -21,5 +21,18 @@ export default {
 .digiCard {
   box-sizing: border-box;
   padding: 24px;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.digiPic {
+  width: 80%;
+}
+.v-card-text,
+.v-card-title {
+  padding: 0;
 }
 </style>
