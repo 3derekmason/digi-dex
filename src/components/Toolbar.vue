@@ -5,6 +5,9 @@
 <script>
 export default {
   name: "MainToolbar",
+  props: {
+    digimon: Array,
+  },
 };
 </script>
 

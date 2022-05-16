@@ -1,7 +1,7 @@
 <template>
   <AppBar />
   <div class="homePage">
-    <MainToolbar />
+    <MainToolbar :digimon="this.digimon" />
     <v-container class="digiView">
       <MainCard
         v-for="digi in digimon"
@@ -36,7 +36,6 @@ export default {
   },
   mounted() {
     this.getAllDigis();
-    console.log(this.digimon);
   },
   methods: {
     async getAllDigis() {
@@ -44,7 +43,6 @@ export default {
       const data = await res.json();
       data.forEach((digi) => {
         this.digimon.push(digi);
-        console.log("fetched");
       });
     },
   },
