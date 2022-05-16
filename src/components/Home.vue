@@ -1,6 +1,5 @@
 <template>
-  <v-container>
-    <h1>Digi-Dex</h1>
+  <div class="homePage">
     <v-container class="digiView">
       <MainCard
         v-for="digi in digimon"
@@ -10,7 +9,7 @@
         :level="digi.level"
       />
     </v-container>
-  </v-container>
+  </div>
 </template>
 
 <script>
@@ -44,12 +43,22 @@ export default {
 </script>
 
 <style scoped>
+.homePage {
+  width: 100vw;
+  height: 100vh;
+  background: #454655;
+  overflow-y: scroll;
+}
+
 .digiView {
   width: 90vw;
+  max-height: 95vh;
+  border-radius: 2px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  overflow-y: scroll;
 }
 </style>

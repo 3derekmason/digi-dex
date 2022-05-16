@@ -27,6 +27,11 @@ export default {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background: #fff;
+}
+.digiCard:hover {
+  cursor: pointer;
+  border: 1px solid #a9aabc80;
 }
 .digiPic {
   width: 80%;
@@ -34,5 +39,12 @@ export default {
 .v-card-text,
 .v-card-title {
   padding: 0;
+}
+.digiName {
+  text-transform: uppercase;
+  color: #0d47a1;
+}
+.digiLevel {
+  color: #454655;
 }
 </style>
