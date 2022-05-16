@@ -2,7 +2,13 @@
   <v-container>
     <h1>Digi-Dex</h1>
     <div class="digiView">
-      <MainCard v-for="digi in digimon" v-bind:key="digi" v:bind="digiData" />
+      <MainCard
+        v-for="digi in digimon"
+        v-bind:key="digi"
+        :name="digi.name"
+        :img="digi.img"
+        :level="digi.level"
+      />
     </div>
   </v-container>
 </template>
@@ -12,11 +18,6 @@ import MainCard from "./Card.vue";
 
 export default {
   name: "HomePage",
-  digiData: {
-    name: String,
-    img: String,
-    level: String,
-  },
   components: {
     MainCard,
   },
