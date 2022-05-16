@@ -11,17 +11,20 @@
       />
     </v-container>
   </div>
+  <AppFoot />
 </template>
 
 <script>
 import MainCard from "./Card.vue";
 import AppBar from "./AppBar.vue";
+import AppFoot from "./Footer.vue";
 
 export default {
   name: "HomePage",
   components: {
     MainCard,
     AppBar,
+    AppFoot,
   },
   data() {
     return {
@@ -48,14 +51,13 @@ export default {
 <style scoped>
 .homePage {
   width: 100vw;
-  height: 100vh;
   background: #454655;
   overflow-y: scroll;
 }
 
 .digiView {
   width: 90vw;
-  max-height: 95vh;
+  height: calc(100vh - 117px);
   border-radius: 2px;
   display: flex;
   flex-wrap: wrap;

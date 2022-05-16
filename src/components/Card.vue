@@ -31,7 +31,7 @@ export default {
 }
 .digiCard:hover {
   cursor: pointer;
-  border: 1px solid #a9aabc80;
+  border: 2px solid #a9aabc80;
 }
 .digiPic {
   width: 80%;
