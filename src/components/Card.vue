@@ -1,6 +1,8 @@
 <template>
   <div class="digiCard">
-    <p>{{ this.cardName }}</p>
+    <p>{{ this.name }}</p>
+    <img :src="this.img" width="80" />
+    <p>{{ this.level }}</p>
   </div>
 </template>
 
@@ -11,13 +13,6 @@ export default {
     name: String,
     img: String,
     level: String,
-  },
-  data() {
-    return {
-      cardName: this.name,
-      cardImg: this.img,
-      cardType: this.type,
-    };
   },
 };
 </script>
