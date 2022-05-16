@@ -1,7 +1,7 @@
 <template>
   <v-container>
     <h1>Digi-Dex</h1>
-    <div class="digiView">
+    <v-container class="digiView">
       <MainCard
         v-for="digi in digimon"
         v-bind:key="digi"
@@ -9,7 +9,7 @@
         :img="digi.img"
         :level="digi.level"
       />
-    </div>
+    </v-container>
   </v-container>
 </template>
 
@@ -42,3 +42,14 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.digiView {
+  width: 90vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+</style>
