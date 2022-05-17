@@ -4,7 +4,7 @@
     <div class="toolbar">
       <v-select
         :items="attributes"
-        @update:modelValue="this.orderByName(this.digimon)"
+        @update:modelValue="changeOrder"
         label="Order By:"
         class="d-select"
       ></v-select>
@@ -37,7 +37,7 @@ export default {
   data() {
     return {
       digimon: [],
-      attributes: ["Name", "Type"],
+      attributes: ["Name", "Level"],
     };
   },
   mounted() {
@@ -45,23 +45,26 @@ export default {
   },
   methods: {
     async getAllDigis() {
+      this.digimon.splice(0);
       const res = await fetch("https://digimon-api.vercel.app/api/digimon");
       const data = await res.json();
       data.forEach((digi) => {
         this.digimon.push(digi);
       });
     },
-    orderByName: (array) => {
-      array.sort((a, b) => {
+    sortByName(arr) {
+      arr.sort((a, b) => {
         const nameA = a.name.toUpperCase();
         const nameB = b.name.toUpperCase();
         return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
       });
     },
-    changeOrder: (e) => {
+    changeOrder(e) {
       return e === "Name"
-        ? (this.digimon = this.orderByName(this.digimon))
-        : console.log(e);
+        ? this.sortByName(this.digimon)
+        : e === "Level"
+        ? this.getAllDigis()
+        : console.log("err");
     },
   },
 };
