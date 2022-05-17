@@ -1,7 +1,14 @@
 <template>
   <AppBar />
   <div class="homePage">
-    <MainToolbar :digimon="this.digimon" />
+    <div class="toolbar">
+      <v-select
+        :items="attributes"
+        @update:modelValue="this.orderByName(this.digimon)"
+        label="Order By:"
+        class="d-select"
+      ></v-select>
+    </div>
     <v-container class="digiView">
       <MainCard
         v-for="digi in digimon"
@@ -19,7 +26,6 @@
 import MainCard from "./Card.vue";
 import AppBar from "./AppBar.vue";
 import AppFoot from "./Footer.vue";
-import MainToolbar from "./Toolbar.vue";
 
 export default {
   name: "HomePage",
@@ -27,11 +33,11 @@ export default {
     MainCard,
     AppBar,
     AppFoot,
-    MainToolbar,
   },
   data() {
     return {
       digimon: [],
+      attributes: ["Name", "Type"],
     };
   },
   mounted() {
@@ -44,11 +50,18 @@ export default {
       data.forEach((digi) => {
         this.digimon.push(digi);
       });
-      await this.digimon.sort((a, b) => {
+    },
+    orderByName: (array) => {
+      array.sort((a, b) => {
         const nameA = a.name.toUpperCase();
         const nameB = b.name.toUpperCase();
         return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
       });
+    },
+    changeOrder: (e) => {
+      return e === "Name"
+        ? (this.digimon = this.orderByName(this.digimon))
+        : console.log(e);
     },
   },
 };
@@ -66,6 +79,19 @@ export default {
   flex-direction: column;
   gap: 8px;
   overflow-y: scroll;
+}
+
+.toolbar {
+  padding: 0;
+  margin-top: 8px;
+  width: 20%;
+  height: 56px;
+  background: #a9aabc;
+  border-radius: 4px;
+}
+.d-select {
+  border-radius: 4px;
+  text-align: center;
 }
 
 .digiView {
