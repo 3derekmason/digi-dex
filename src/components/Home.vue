@@ -44,6 +44,11 @@ export default {
       data.forEach((digi) => {
         this.digimon.push(digi);
       });
+      await this.digimon.sort((a, b) => {
+        const nameA = a.name.toUpperCase();
+        const nameB = b.name.toUpperCase();
+        return nameA < nameB ? -1 : nameA > nameB ? 1 : 0;
+      });
     },
   },
 };
