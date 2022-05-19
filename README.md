@@ -1,24 +1,25 @@
-# digi-dex
+# Derek's Digi-Dex
+
+## Overview
+
+A quick project I wanted to throw together using **Vue**, **Vuetify**, and a [Digimon API](https://digimon-api.herokuapp.com/); credit to [Shadow Smith](https://shadowsmith.com/)!
+
+![screenshot of app](./public/Screen%20Shot%202022-05-19%20at%203.13.41%20PM.png)
 
 ## Project setup
-```
-npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+1. `npm install`
 
-### Compiles and minifies for production
-```
-npm run build
-```
+2. `npm run serve`
 
-### Lints and fixes files
-```
-npm run lint
-```
+#### Compiles and minifies for production
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`npm run build`
+
+#### Lints and fixes files
+
+`npm run lint`
+
+## Deployed using Vercel
+
+### [Take me to Derek's Digi-Dex!](https://dereks-digi-dex.vercel.app/)
